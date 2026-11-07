@@ -1,0 +1,194 @@
+/* Schibsted Grotesk, SIL Open Font License (see font-license.txt) */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("font.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --paper: #f5f6f8;
+  --ink: #141b24;
+  --slate: #5a6573;
+  --rule: #dce1e7;
+  --accent: #2f7d45;
+  --accent-soft: #e1f0e3;
+  --on-accent: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #12161c;
+    --ink: #eef1f5;
+    --slate: #9aa4b1;
+    --rule: #29303a;
+    --accent: #7fcf8c;
+    --accent-soft: #1d3325;
+    --on-accent: #12161c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 88px 24px 56px;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+a:hover { text-decoration-color: var(--accent); }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* App-icon shape, used for the logomark and app tiles */
+.icon {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Header */
+.logo {
+  display: block;
+  flex: none;
+  width: 64px;
+  height: 64px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand-name {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.intro {
+  margin: 36px 0 0;
+  font-size: 21px;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+
+/* Apps */
+.apps { margin-top: 64px; }
+.section-title {
+  margin: 0 0 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--slate);
+}
+.building {
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.app {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+}
+.app:last-child { border-bottom: 1px solid var(--rule); }
+.app .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 22px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.app-name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.app p { margin: 2px 0 0; color: var(--slate); }
+.app .status { margin-top: 8px; font-size: 14px; }
+
+/* Footer */
+.site-footer {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  font-size: 15px;
+  color: var(--slate);
+}
+.site-footer h2 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.site-footer p { margin: 0; }
+.site-footer .legal {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 520px) {
+  .page { padding-top: 56px; }
+  .intro { font-size: 19px; }
+  .site-footer { grid-template-columns: 1fr; }
+}
+
+/* Policy pages */
+.doc .logo { width: 44px; height: 44px; }
+.doc .brand-name { font-size: 20px; }
+.doc-title {
+  margin: 56px 0 4px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.updated { margin: 0 0 32px; font-size: 15px; color: var(--slate); }
+.doc h3 {
+  margin: 36px 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.doc ul { padding-left: 20px; }
+.doc li + li { margin-top: 6px; }
